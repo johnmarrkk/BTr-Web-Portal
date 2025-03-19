@@ -1,2 +1,5 @@
-<h1 class="text-3xl text-blue-300">Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script></script>
+
+<nav class="w-full h-18 bg-blue-700 flex">
+    <h1 class="">hello</h1>
+</nav>
