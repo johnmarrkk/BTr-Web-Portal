@@ -9,7 +9,7 @@
     
     <div class=" bg-gray-100 p-20 border-1 border-gray-400 flex flex-col items-center h-screen">
         <div>
-             <img src="images/BTR-logo.png" class="h-40 mt-30 mb-10" alt="" />
+             <img src="images/BTR-logo.png" class="h-40 mt-20 mb-10" alt="" />
         </div>
        
 
