@@ -23,6 +23,7 @@
     </nav>
 
     <div class="grid grid-cols-5 h-screen">
+        
         <div class=" bg-gray-100 p-20 border-1 border-gray-400 flex flex-col items-center h-screen">
             
         </div>
@@ -33,5 +34,7 @@
                 
               </div>
         </div>
+
+        
 
     </div>
