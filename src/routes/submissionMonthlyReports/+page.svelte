@@ -28,7 +28,7 @@ import privacyAct from '../dataPrivacyAct/privacyAct.svelte';
     <div class="min-h-screen flex flex-col items-center justify-center px-6 py-8 bg-gray-100">
         <div class="w-280 h-140 bg-white rounded-lg shadow dark:border dark:bg-white dark:border-gray-300">
 
-            <h2 class=" text-base ml-10 mt-8  text-lg font-semibold">Request for Certification and Confirmation of Deposited National Collection</h2>
+            <h2 class=" text-base ml-10 mt-8  text-lg font-semibold">Submission of Monthly Reports of Collections and Deposits</h2>
             <h2 class=" text-base ml-10 mt-3 text-lg font-semibold">Concent to collect, use, share and store information.</h2>
 
             <p class=" text-xs ml-10 mt-3 text-sm text-gray-600 mt-2">
