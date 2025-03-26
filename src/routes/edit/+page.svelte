@@ -23,7 +23,7 @@
     </nav>
 
     <div class="w-full pt-5 flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <div class="w-120 h-165  bg-white rounded-lg shadow dark:border md:mt-0  dark:bg-white dark:border-gray-300">
+        <div class="w-110 h-145  bg-white rounded-lg shadow dark:border md:mt-0  dark:bg-white dark:border-gray-300">
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                 <form class="space-y-4 md:space-y-6" action="#">
                         
@@ -34,25 +34,35 @@
                             <button class="text-gray-500 text-sm pb-2">Change Password</button>
                         </nav>
                     </div>
-                        <!-- svelte-ignore a11y_label_has_associated_control -->
-                        <label class="text-sm block mb-2">First Name</label>
-                        <input type="text" class="w-full border border-black rounded p-2 mb-4">
+                    <div class="relative">
+                      <input type="text" id="small_outlined" class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                      <label for="small_outlined" class="absolute text-sm text-gray-500text-gray-400 duration-300 transform -translate-y-3 scale-75 top-1 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">First Name</label>
+                  </div>
                 
-                        <!-- svelte-ignore a11y_label_has_associated_control -->
-                        <label class="text-sm block mb-2">Middle Name</label>
-                        <input type="text" class="w-full border border-black rounded p-2 mb-4">
+                  <div class="relative">
+                    <input type="text" id="small_outlined" class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                    <label for="small_outlined" class="absolute text-sm text-gray-500text-gray-400 duration-300 transform -translate-y-3 scale-75 top-1 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Middle Name</label>
+                  </div>
                 
-                        <!-- svelte-ignore a11y_label_has_associated_control -->
-                        <label class="text-sm block mb-2">Last Name</label>
-                        <input type="text" class="w-full border border-black rounded p-2 mb-4">
+                  <div class="relative">
+                    <input type="text" id="small_outlined" class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                    <label for="small_outlined" class="absolute text-sm text-gray-500text-gray-400 duration-300 transform -translate-y-3 scale-75 top-1 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Last Name</label>
+                  </div>
                 
-                        <!-- svelte-ignore a11y_label_has_associated_control -->
-                        <label class="text-sm block mb-2">Agency</label>
-                        <input type="text" class="w-full border border-black rounded p-2 mb-4">
-                
-                        <!-- svelte-ignore a11y_label_has_associated_control -->
-                        <label class="text-sm block mb-2">Office Address</label>
-                        <input type="text" class="w-full border border-black rounded p-2 mb-4">
+                  <div class="relative">
+                    <input type="text" id="small_outlined" class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                    <label for="small_outlined" class="absolute text-sm text-gray-500text-gray-400 duration-300 transform -translate-y-3 scale-75 top-1 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Mobile Number</label>
+                  </div>
+                    
+                  <div class="relative">
+                    <input type="text" id="small_outlined" class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                    <label for="small_outlined" class="absolute text-sm text-gray-500text-gray-400 duration-300 transform -translate-y-3 scale-75 top-1 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Position</label>
+                  </div>
+
+                  <div class="relative">
+                    <input type="text" id="small_outlined" class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                    <label for="small_outlined" class="absolute text-sm text-gray-500text-gray-400 duration-300 transform -translate-y-3 scale-75 top-1 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-3 start-1 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Office Address</label>
+                  </div>
                 
                         <div class="flex justify-end space-x-4 mt-6">
                             <button type="button" class="px-5 py-2.5 text-sm text-gray-700 bg-gray-300 rounded-lg">Cancel</button>
