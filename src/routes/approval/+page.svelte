@@ -22,7 +22,7 @@
 
 
   <div class="flex items-center justify-center min-h-screen">
-    <div class="w-165 h-90 p-8 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 text-center flex flex-col items-center">
+    <div class="w-165 h-90 p-8 bg-white border border-gray-200 rounded-lg shadow-sm bg-gray-800 border-gray-700 text-center flex flex-col items-center">
         <img src="images/Btr_Banner.png" alt="Approval Pending" class="w-100 h-24 mb-4">
 
         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
