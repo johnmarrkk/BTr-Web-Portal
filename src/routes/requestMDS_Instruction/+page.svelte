@@ -53,13 +53,16 @@
                         <div class="space-y-4">
                             <div class="grid grid-cols-2 gap-4">
                                 <!-- Provincial Office Dropdown -->
+
                                 <div class="relative w-full">
-                                    <label for="provincialOffice" class="absolute left-3 top-0 text-black text-xs transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-sm peer-focus:text-gray-500">
-                                        Provincial Office
-                                      </label>
-                                    <select id="provincialOffice" class="block w-full px-2.5 py-3 text-sm text-gray-900 border border-black rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600">
+                                    <label for="provincialOffice"
+                                        class="absolute left-3 top-0 text-black text-xs transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-gray-500">
+                                        Bank Branch
+                                    </label>
+                                    <select id="provincialOffice"
+                                        class="peer block w-full px-2.5 py-2 text-sm text-gray-900 border border-black rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600">
                                         <option value="" disabled selected>- select -</option>
-                                        <option value="albayPO">Albay</option>
+                                        <option value="">Albay</option>
                                         <option value="camarinesNortePO">Camarines Norte</option>
                                         <option value="camarinesSurPO">Camarines Sur</option>
                                         <option value="catanduanesPO">Catanduanes</option>
@@ -67,25 +70,86 @@
                                         <option value="masbatePO">Masbate</option>
                                     </select>
                                 </div>
-                        
+
                                 <div class="relative">
-                                    <input type="agency_name" id="agency_name" class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-black bg-transparent rounded-lg border-1 border-black appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="" />
-                                    <label for="agency_name" class="absolute text-xs text-black duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+                                    <input type="text" id="agencyName"
+                                        class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-black bg-transparent rounded-lg border border-black appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                        placeholder="" />
+                                    <label for="agencyName"
+                                        class="absolute text-xs text-black duration-300 transform -translate-y-3 scale-75 top-2.5 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">
                                         Name of Agency
                                     </label>
                                 </div>
 
                                 <div class="relative">
-                                    <input type="text" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
-                                    <label for="floating_filled" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Floating filled</label>
+                                    <input type="text" id="agencyHead_name"
+                                        class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-black bg-transparent rounded-lg border border-black appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                        placeholder="" />
+                                    <label for="agencyHead_name"
+                                        class="absolute text-xs text-black duration-300 transform -translate-y-3 scale-75 top-2.5 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">
+                                        Name of Agency Head
+                                    </label>
                                 </div>
 
                                 <div class="relative">
-                                    <input type="agency_name" id="agencyHead_name" class="block px-2.5 pb-2.5 pt-4 w-full text-xs text-black bg-transparent rounded-lg border-1 border-black appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="" />
-                                    <label for="agencyHead_name" class="absolute text-xs text-black duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
-                                        Name of Agency
+                                    <input type="text" id="position"
+                                        class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-black bg-transparent rounded-lg border border-black appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                        placeholder="" />
+                                    <label for="position"
+                                        class="absolute text-xs text-black duration-300 transform -translate-y-3 scale-75 top-2.5 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">
+                                        Designation/Position (Agency Head)
                                     </label>
                                 </div>
+
+                                <div class="relative">
+                                    <input type="text" id="bankAccountNumber"
+                                        class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-black bg-transparent rounded-lg border border-black appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                        placeholder="" />
+                                    <label for="bankAccountNumber"
+                                        class="absolute text-xs text-black duration-300 transform -translate-y-3 scale-75 top-2.5 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">
+                                        Bank Account Number Requested
+                                    </label>
+                                </div>
+                                
+
+                                <div class="relative">
+                                    <input type="text" id="bankAccountName"
+                                        class="block px-2.5 pb-1.5 pt-3 w-full text-sm text-black bg-transparent rounded-lg border border-black appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                        placeholder="" />
+                                    <label for="bankAccountName"
+                                        class="absolute text-xs text-black duration-300 transform -translate-y-3 scale-75 top-2.5 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">
+                                        Bank Account Name
+                                    </label>
+                                </div>
+                                
+
+                                <div class="relative w-full">
+                                    <label for="bankBranch"
+                                        class="absolute left-3 top-0 text-black text-xs transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-gray-500">
+                                        Bank Branch
+                                    </label>
+                                    <select id="bankBranch"
+                                        class="peer block w-full px-2.5 py-2 text-sm text-gray-900 border border-black rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600">
+                                        <option value="" disabled selected>- select -</option>
+                                        <option value="">Development Bank of the Philippines</option>
+                                        <option value="">Land Bank of the Philippines</option>
+                                    </select>
+                                </div>
+                                
+
+                                <div class="relative w-full">
+                                    <label for="mdsBooklet"
+                                        class="absolute left-3 top-0 text-black text-xs transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-400 peer-focus:top-2 peer-focus:text-xs peer-focus:text-gray-500">
+                                        No. of Requested MDS Check Booklet/s
+                                    </label>
+                                    <select id="mdsBooklet"
+                                        class="peer block w-full px-2.5 py-2 text-sm text-gray-900 border border-black rounded-lg appearance-none focus:outline-none focus:ring-1 focus:ring-blue-600 focus:border-blue-600">
+                                        <option value="" disabled selected>- select -</option>
+                                        <option value="">2</option>
+                                        <option value="">3</option>
+                                    </select>
+                                </div>
+                                
                         
                         </div>
                         
