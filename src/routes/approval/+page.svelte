@@ -22,17 +22,17 @@
 
 
   <div class="flex items-center justify-center min-h-screen">
-    <div class="w-165 h-90 p-8 bg-white border border-gray-200 rounded-lg shadow-sm bg-gray-800 border-gray-700 text-center flex flex-col items-center">
+    <div class="w-165 h-90 p-8 bg-white border border-gray-200 rounded-lg shadow-sm bg-gray-800 border-gray-300 text-center flex flex-col items-center">
         <img src="images/Btr_Banner.png" alt="Approval Pending" class="w-100 h-24 mb-4">
 
         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             Your account is under approval.
         </h5>
 
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-center">
+        <p class="mb-3 font-normal text-black-700 dark:text-black-400 text-center">
             Your account creation request is currently under review and verification by the Bureau of the Treasury personnel. Once your account is approved, an email confirmation will be sent for further instructions.
         </p>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-center">
+        <p class="mb-3 font-normal text-black-700 dark:text-black-400 text-center">
             Thank you for your patience and understanding!
         </p>
 
