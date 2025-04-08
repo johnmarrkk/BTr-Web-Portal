@@ -1,7 +1,7 @@
 <script>
     // @ts-nocheck
     import PrivacyAct from '../dataPrivacyAct/privacyAct.svelte';
-import privacyAct from '../dataPrivacyAct/privacyAct.svelte';
+
     </script>
     
     <nav class="bg-blue-900 h-16 flex fixed w-full items-center">
@@ -26,21 +26,22 @@ import privacyAct from '../dataPrivacyAct/privacyAct.svelte';
     
   
     <div class="min-h-screen flex flex-col items-center justify-center px-6 py-8 bg-gray-100">
-        <div class="w-280 h-140 bg-white rounded-lg shadow dark:border dark:bg-white dark:border-gray-300">
+        <div class="w-280 h-auto bg-white rounded-lg shadow dark:border dark:bg-white dark:border-gray-300">
 
             <h2 class=" text-base ml-10 mt-8  text-lg font-semibold">Request for Opening Bank Account</h2>
             <h2 class=" text-base ml-10 mt-3 text-lg font-semibold">Concent to collect, use, share and store information.</h2>
 
-            <p class=" text-xs ml-10 mt-3 text-sm text-gray-600 mt-2">
-                BTr requires your consent before it collects personal and sensitive personal information. <br>
-                By submitting this form, you are agreeing & giving BTr consent to collect, use, share and store these informations.
-              </p>
+            <ul class="list-disc ml-14 text-xs">
+              <li>All files to be uploaded as attachments must be merged into one single file and in .PDF format.</li>
+              <li>Please ensure to upload a clear/readable version of the file attachment.</li>
+              <li>Use the prescribed file name: [ OBA_Province_Agency Name_Date of Request(mm/dd/yyyy) ]</li>
+            </ul>
 
               <PrivacyAct />
               
          
 
-            <div class="flex items-center mt-5 ml-10 mb-5">
+            <div class="flex items-center mt-10 ml-10 mb-5">
               <input id="link-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
               <label for="link-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-800">I agree with the <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">terms and conditions</a>.</label>
             </div>

@@ -15,7 +15,7 @@
   </div>
 
   <div class="ml-auto mr-2 w-40 flex items-center">
-    <h1 class="font-bold hover:bg-amber-200 cursor-pointer p-3">Log in</h1>
+    <a href="https://www.facebook.com/Izyl.Clemena.15" class="font-bold hover:bg-amber-200 cursor-pointer p-3">Log in</a>
   </div>
 </nav>
 
@@ -57,7 +57,7 @@
   <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
     <div class="md:flex md:justify-between">
       <div class="mb-6 md:mb-0">
-        <a href="#" class="flex items-center">
+        <a href="/" class="flex items-center">
           <img src="images/BagongPilipinas-logo.png" class="h-13 me-3" alt="" />
           <img src="images/DOF-logo.png" class="h-13 me-3" alt="" />
           <img src="images/BTR-logo.png" class="h-13 me-3" alt="" />

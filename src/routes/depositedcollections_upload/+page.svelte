@@ -30,19 +30,19 @@
 
                     <h2 class="text-base font-bold">Request for Deposited National Collections</h2>
                     <h2 class="text-base font-bold">Mandatory Supporting Documents</h2>
-                    <h2 class="text-sm font-light">1. Summary of Detailed Deposited Collection (in case two or more transactions).</h2>
-                    <h2 class="text-xs font-light">Note: In case of unverified collections, copies of bank validated Deposit Slips and other necessary documents will be requested for further validation.</h2>
+                    <h2 class="text-sm font-normal">1. Summary of Detailed Deposited Collection (in case two or more transactions).</h2>
+                    <h2 class="text-xs font-normal">Note: In case of unverified collections, copies of bank validated Deposit Slips and other necessary documents will be requested for further validation.</h2>
                     <h2 class="text-base font-bold">Please take note of the following in uploading the file:</h2>
                     
-                    <p class="text-black text-xs font-light whitespace-pre-line dark:text-black">
-                     • All files to be uploaded as attachments must be in .PDF format.
+                    <p class="text-black text-xs font-normal whitespace-pre-line dark:text-black">
+                     • All files to be uploaded as attachments must be in <strong>.PDF</strong> format.
                      • Please ensure to upload a clear/readable version of the file attachment.
                      • Use the prescribed file name: [Agency_Name of Collecting Officer_Period Covered_Document Name]
                     <p>
 
                         <h2 class="text-xs font-bold">Summary of Detailed Deposited Collections</h2>
-                        <h2 class="text-sm font-light">Use the prescribed file name: [Agency_Name of Collecting Officer_Period Covered_Document Name]</h2>
-                        <h2 class="text-xs font-light">Select PDF file</h2>
+                        <h2 class="text-sm font-normal">Use the prescribed file name: [Agency_Name of Collecting Officer_Period Covered_Document Name]</h2>
+                        <h2 class="text-xs font-normal">Select PDF file</h2>
 
                         
                         <label class="block mb-2 text-sm font-medium text-gray-900" for="file_input">Upload File</label>
