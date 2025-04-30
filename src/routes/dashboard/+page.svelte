@@ -4,9 +4,9 @@
 
     const slides = [
         "/images/BTRV-Building.jpg",
-        "https://source.unsplash.com/800x400/?city,night",
-        "https://source.unsplash.com/800x400/?technology",
-        "https://source.unsplash.com/800x400/?forest",
+        "/images/CarouselSlide1.png",
+        "/images/CarouselSlide2.png",
+        "/images/CarouselSlide3.png",
     ];
 
     function nextSlide() {
@@ -32,6 +32,7 @@
         clearInterval(interval);
     });
 </script>
+
 
 <div>
     <div class="w-full h-[250px] grid grid-cols-[3fr_1fr]">
@@ -81,12 +82,65 @@
             </div>
         </div>
         <div class="w-full grid grid-rows-2 gap-2 ml-2">
-            <div class="bg-blue-200">
+            <img src="/images/BTR-Building2.png" alt="" class="h-30 w-100">
+            <img src="/images/BTRV-Building.jpg" alt="" class="h-30 w-100">
 
-            </div>
-            <div class="bg-green-200">
-
-            </div>
+          
         </div>
     </div>
+</div>
+
+
+<div>
+    <h1 class = "mt-5 text-xl font-bold">Hello, Izyl Clemeña!</h1>
+    <p class = "text-blue-500">How can we help you?</p>
+    <p class = "text-center">Click on the Treasury services that you want to avail</p>
+</div>
+
+<div class="grid grid-cols-5  mt-5 ml-5">
+  <div class="border rounded-lg h-auto w-60">
+    <div class="flex justify-center p-2">
+        <img src="https://www.gstatic.com/images/branding/product/1x/docs_2020q4_48dp.png" alt="Document Icon" class="w-10 h-10">
+      </div>
+      <div class=" text-xs font-medium text-center">
+        Certification and<br>
+        Confirmation of Deposited<br>
+        National Collections
+      </div>
+  </div>
+
+  <div class="border rounded-lg h-auto w-60">
+    <div class="flex justify-center p-2">
+        <img src="/images/chequeIcon.png" alt="Document Icon" class="w-10 h-10 mb-3">
+      </div>
+      <div class="text-sm font-medium text-center">
+        Re-order of MDS Checks
+      </div>
+  </div>
+  <div class="border rounded-lg h-auto w-60">
+    <div class="flex justify-center p-2">
+        <img src="/images/bankIcon.png" alt="Document Icon" class="w-10 h-10 mb-3">
+      </div>
+      <div class="text-sm font-medium text-center">
+        Opening of Bank Account
+      </div>
+  </div>
+  <div class="border rounded-lg h-auto w-60">
+    <div class="flex justify-center p-2">
+        <img src="/images/Report.png" alt="Document Icon" class="w-10 h-10 mb-1.5">
+      </div>
+      <div class="text-sm font-medium text-center">
+        Monthly Report of <br>
+        Collections and Deposits
+      </div>
+  </div>
+  <div class="border rounded-lg h-auto w-60">
+    <div class="flex justify-center p-2">
+        <img src="/images/paperIcon.png" alt="Document Icon" class="w-10 h-10 mb-3">
+      </div>
+      <div class="text-sm font-medium text-center">
+        Financial Literacy
+      </div>
+  </div>
+
 </div>
