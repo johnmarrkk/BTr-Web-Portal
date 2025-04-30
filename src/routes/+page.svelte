@@ -14,8 +14,8 @@
     </ul>
   </div>
 
-  <div class="ml-auto mr-2 w-40 flex items-center">
-    <a href="https://www.facebook.com/Izyl.Clemena.15" class="font-bold hover:bg-amber-200 cursor-pointer p-3">Log in</a>
+  <div class="ml-auto mr-2 w-50 flex items-center justify-center bg-yellow-200 hover:bg-amber-200 rounded-lg">
+    <a href="/login" class="font-bold cursor-pointer p-3">Log in</a>
   </div>
 </nav>
 

@@ -79,7 +79,7 @@
                                 Izyl Clemeña
                             </h5>
                             <h1 class="text-sm text-gray-500">
-                                Miss Universe 2028
+                                Princess
                             </h1>
                         </div>
                     </div>

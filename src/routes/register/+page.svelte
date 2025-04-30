@@ -156,7 +156,10 @@
         class=" bg-gray-100 p-20 border-1 border-gray-400 h-full flex flex-col items-center"
     >
         <div class="mb-10">
-            <img src="images/BTR-logo.png" class="h-40 mt-20" alt="" />
+            <a href="/login"
+                ><img src="images/BTR-logo.png" class="h-40 mt-20" alt="" /></a
+            >
+
             <h1 class="flex justify-center text-2xl">Region V</h1>
             <h1 class="flex justify-center text-lg">Account Registration</h1>
         </div>
@@ -410,7 +413,8 @@
                                     placeholder=""
                                     bind:value={positionTitle}
                                     on:input={() => {
-                                        positionTitle = positionTitle.toUpperCase();
+                                        positionTitle =
+                                            positionTitle.toUpperCase();
                                     }}
                                 />
                                 <label
@@ -561,7 +565,8 @@
                                     placeholder=""
                                     bind:value={officeAddress}
                                     on:input={() => {
-                                        officeAddress = officeAddress.toUpperCase();
+                                        officeAddress =
+                                            officeAddress.toUpperCase();
                                     }}
                                 />
                                 <label
@@ -736,7 +741,9 @@
                                 Review Your Information
                             </h3>
                             <div class="mt-4 overflow-x-auto">
-                                <table class="w-full text-md text-left">
+                                <table
+                                    class="w-full text-md text-left space-x-2"
+                                >
                                     <tbody>
                                         <tr>
                                             <th
@@ -783,7 +790,7 @@
                                                 >{selectedSex}</td
                                             >
                                         </tr>
-                                         <tr>
+                                        <tr>
                                             <th
                                                 class="pr-4 font-normal text-gray-600"
                                                 >Mobile Number:</th
@@ -879,15 +886,60 @@
                 </div>
 
                 {#if step < 4}
-                    <div class="flex justify-end mt-6">
+                    <div class="flex justify-end mt-6 gap-2">
                         {#if step > 1}
                             <button
                                 type="button"
                                 on:click={prevStep}
-                                class="bg-gray-300 w-1/4 px-6 py-2 mr-3 rounded-lg text-sm font-semibold text-gray-700 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                class="bg-gray-300 w-1/4 px-6 py-3 mr-3 rounded-lg text-sm font-semibold text-gray-700 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 >Back</button
                             >
+                        {:else if step === 1}
+                            <button
+                                type="button"
+                                class="bg-gray-200 w-1/4 px-6 py-3 mr-3 rounded-lg text-sm font-semibold text-gray-900 cursor-pointer"
+                                popovertarget="exitModal"
+                            >
+                                Cancel
+                            </button>
                         {/if}
+
+                        <div
+                            id="exitModal"
+                            popover
+                            class="h-50 w-100 border border-gray-200 transition-all ease-in-out duration-600 absolute mx-auto my-auto shadow-2xl rounded-lg"
+                        >
+                            <div
+                                class="flex items-center justify-center w-full h-full"
+                            >
+                                <div
+                                    class="flex flex-col items-center text-center gap-6"
+                                >
+                                    <h2 class="text-lg font-semibold">
+                                        Are you sure you want to cancel?
+                                    </h2>
+                                    <div
+                                        class="flex justify-center gap-4 w-full"
+                                    >
+                                        <button
+                                            popovertarget="exitModal"
+                                            popovertargetaction="hide"
+                                            class="px-4 py-2 w-1/2 bg-gray-300 rounded hover:bg-gray-400 cursor-pointer"
+                                        >
+                                            No
+                                        </button>
+                                        <a href="/login" class="w-1/2"
+                                            ><button
+                                                class="px-4 py-2 w-full bg-red-600 text-white rounded hover:bg-red-700 cursor-pointer"
+                                            >
+                                                Yes
+                                            </button></a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <button
                             type="button"
                             on:click={nextStep}

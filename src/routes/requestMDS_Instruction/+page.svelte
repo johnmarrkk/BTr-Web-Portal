@@ -23,7 +23,7 @@
     </nav>
 
     <div class="w-full pt-5 flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <div class="w-200 h-200 bg-white rounded-lg shadow dark:border md:mt-30 border-gray-300">
+        <div class="w-200 h-165 bg-white rounded-lg shadow dark:border md:mt-20 border-gray-300">
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                 
                 <form class="space-y-1 md:space-y-3" action="#">
