@@ -98,7 +98,7 @@
     <p class = "text-center">Click on the Treasury services that you want to avail</p>
 </div>
 
-<div class="grid grid-cols-5  mt-5 ml-5">
+<div class="grid grid-cols-5 gap-4 mt-5 ml-5">
   <div class="border rounded-lg justify-between">
     <div class="flex justify-center p-2">
         <img src="https://www.gstatic.com/images/branding/product/1x/docs_2020q4_48dp.png" alt="Document Icon" class="w-10 h-10">
