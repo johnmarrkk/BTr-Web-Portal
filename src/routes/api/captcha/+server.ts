@@ -15,11 +15,11 @@ function drawDistortedCaptcha(text: string): Buffer {
 	const canvas = createCanvas(width, height);
 	const ctx = canvas.getContext('2d');
   
-	// Black background
+	// Set black background
 	ctx.fillStyle = '#000';
 	ctx.fillRect(0, 0, width, height);
   
-	// Wavy background lines
+	// Add noisy lines in the background
 	for (let i = 0; i < 20; i++) {
 	  ctx.strokeStyle = `rgba(${Math.random()*255}, ${Math.random()*255}, ${Math.random()*255}, 0.3)`;
 	  ctx.beginPath();
@@ -32,10 +32,10 @@ function drawDistortedCaptcha(text: string): Buffer {
 	  ctx.stroke();
 	}
   
-	// Draw characters
+	// Use a system font (safe on Vercel)
 	for (let i = 0; i < text.length; i++) {
 	  const fontSize = 24 + Math.random() * 6;
-	  ctx.font = `${fontSize}px sans-serif`;
+	  ctx.font = `${fontSize}px sans-serif`;  // Use sans-serif font
 	  const x = 20 + i * 25 + (Math.random() - 0.5) * 10;
 	  const y = 40 + (Math.random() - 0.5) * 10;
 	  const angle = (Math.random() - 0.5) * 0.5;
@@ -48,7 +48,7 @@ function drawDistortedCaptcha(text: string): Buffer {
 	  ctx.restore();
 	}
   
-	// Add white noise
+	// Add white noise dots
 	for (let i = 0; i < 100; i++) {
 	  ctx.fillStyle = `rgba(255,255,255,${Math.random()})`;
 	  ctx.beginPath();
@@ -58,6 +58,11 @@ function drawDistortedCaptcha(text: string): Buffer {
   
 	return canvas.toBuffer('image/png');
   }
+  
+  const buffer = drawDistortedCaptcha('A7X9F');
+  // Save the generated captcha to a file
+  import fs from 'fs';
+  fs.writeFileSync('captcha.png', buffer);
   
 
 export const GET: RequestHandler = async ({ cookies }) => {
