@@ -1,13 +1,7 @@
 // src/routes/api/captcha/+server.ts
 
 import type { RequestHandler } from '@sveltejs/kit';
-import { registerFont, createCanvas } from 'canvas';
-import path from 'path';
-
-// Register the custom font from the static directory
-registerFont(path.resolve(process.cwd(), 'static/fonts/Roboto.ttf'), {
-  family: 'Roboto',
-});
+import { createCanvas } from 'canvas';
 
 function generateCaptchaText(): string {
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghkmnopqrstuvwxyz23456789';
@@ -20,36 +14,41 @@ function drawDistortedCaptcha(text: string): Buffer {
   const canvas = createCanvas(width, height);
   const ctx = canvas.getContext('2d');
 
+  // Simple background color
   ctx.fillStyle = '#000';
   ctx.fillRect(0, 0, width, height);
 
-  for (let i = 0; i < 20; i++) {
-    ctx.strokeStyle = `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.3)`;
-    ctx.beginPath();
-    ctx.moveTo(Math.random() * width, Math.random() * height);
-    ctx.bezierCurveTo(
-      Math.random() * width, Math.random() * height,
-      Math.random() * width, Math.random() * height,
-      Math.random() * width, Math.random() * height
-    );
-    ctx.stroke();
-  }
-
+  // Draw distorted text
   for (let i = 0; i < text.length; i++) {
     const fontSize = 24 + Math.random() * 6;
-    ctx.font = `${fontSize}px Roboto`;
-    const x = 20 + i * 25 + (Math.random() - 0.5) * 10;
-    const y = 40 + (Math.random() - 0.5) * 10;
-    const angle = (Math.random() - 0.5) * 0.5;
+    ctx.font = `${fontSize}px sans-serif`; // Use the default sans-serif font
+    const x = 20 + i * 25 + (Math.random() - 0.5) * 10; // Random horizontal movement
+    const y = 40 + (Math.random() - 0.5) * 10; // Random vertical movement
+    const angle = (Math.random() - 0.5) * 0.5; // Random rotation angle
   
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(angle);
-    ctx.fillStyle = `hsl(${Math.random() * 360}, 80%, 60%)`;
+    ctx.fillStyle = `hsl(${Math.random() * 360}, 80%, 60%)`; // Random color for text
     ctx.fillText(text[i], 0, 0);
     ctx.restore();
   }
-  
+
+  // Add random lines for distortion (diagonal, vertical, and horizontal)
+  for (let i = 0; i < 5; i++) {
+    const startX = Math.random() * width;
+    const startY = Math.random() * height;
+    const endX = Math.random() * width;
+    const endY = Math.random() * height;
+    
+    ctx.strokeStyle = `rgba(255, 255, 255, ${Math.random()})`; // Random line opacity
+    ctx.lineWidth = 1 + Math.random() * 2; // Random line thickness
+    ctx.beginPath();
+    ctx.moveTo(startX, startY);
+    ctx.lineTo(endX, endY);
+    ctx.stroke();
+  }
+
   // Add random dots for distortion
   for (let i = 0; i < 100; i++) {
     ctx.fillStyle = `rgba(255,255,255,${Math.random()})`;
@@ -66,12 +65,15 @@ export const GET: RequestHandler = async ({ cookies }) => {
     const captcha = generateCaptchaText();
     const image = drawDistortedCaptcha(captcha);
 
+    // Store the captcha text in a cookie for validation later
     cookies.set('captcha', captcha, { path: '/', maxAge: 300 });
 
+    // Return the captcha image with proper headers
     return new Response(image, {
       headers: {
-        'Content-Type': 'image/png'
-      }
+        'Content-Type': 'image/png',
+        'Cache-Control': 'no-store', // Prevent image caching
+      },
     });
   } catch (error) {
     console.error('Error generating captcha:', error);
