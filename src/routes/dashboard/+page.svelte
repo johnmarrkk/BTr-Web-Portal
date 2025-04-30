@@ -3,10 +3,10 @@
     let currentSlide = 0;
 
     const slides = [
-        "/images/BTRV-Building.jpg",
-        "/images/CarouselSlide1.png",
-        "/images/CarouselSlide2.png",
-        "/images/CarouselSlide3.png",
+        "/images/Slidepic-1.jpeg",
+        "/images/Slidepic-2.jpeg",
+        "/images/Slidepic-3.jpeg",
+        "/images/Slidepic-4.jpeg",
     ];
 
     function nextSlide() {
@@ -83,8 +83,8 @@
             </div>
         </div>
         <div class="w-full grid grid-rows-2 gap-2 ml-2">
-            <img src="/images/BTR-Building2.png" alt="" class="h-30 w-100">
-            <img src="/images/BTRV-Building.jpg" alt="" class="h-30 w-100">
+            <img src="/images/BTr-Treasury.jpg" alt="" class="h-30 w-100 rounded-lg">
+            <img src="/images/Data_Privacy.png" alt="" class="h-30 w-100 rounded-lg">
 
           
         </div>
