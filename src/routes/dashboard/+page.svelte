@@ -99,18 +99,19 @@
 </div>
 
 <div class="grid grid-cols-5  mt-5 ml-5">
-  <div class="border rounded-lg h-auto w-60">
+  <div class="border rounded-lg justify-between">
     <div class="flex justify-center p-2">
         <img src="https://www.gstatic.com/images/branding/product/1x/docs_2020q4_48dp.png" alt="Document Icon" class="w-10 h-10">
       </div>
-      <div class=" text-xs font-medium text-center">
+      <a href="/depositedCollections_Page1" class="text-xs font-medium text-center block cursor-pointer">
         Certification and<br>
         Confirmation of Deposited<br>
         National Collections
-      </div>
+      </a>
+      
   </div>
 
-  <div class="border rounded-lg h-auto w-60">
+  <div class="border rounded-lg justify-between">
     <div class="flex justify-center p-2">
         <img src="/images/chequeIcon.png" alt="Document Icon" class="w-10 h-10 mb-3">
       </div>
@@ -118,7 +119,7 @@
         Re-order of MDS Checks
       </div>
   </div>
-  <div class="border rounded-lg h-auto w-60">
+  <div class="border rounded-lg justify-between">
     <div class="flex justify-center p-2">
         <img src="/images/bankIcon.png" alt="Document Icon" class="w-10 h-10 mb-3">
       </div>
@@ -126,7 +127,7 @@
         Opening of Bank Account
       </div>
   </div>
-  <div class="border rounded-lg h-auto w-60">
+  <div class="border rounded-lg justify-between">
     <div class="flex justify-center p-2">
         <img src="/images/Report.png" alt="Document Icon" class="w-10 h-10 mb-1.5">
       </div>
@@ -135,7 +136,7 @@
         Collections and Deposits
       </div>
   </div>
-  <div class="border rounded-lg h-auto w-60">
+  <div class="border rounded-lg justify-between">
     <div class="flex justify-center p-2">
         <img src="/images/paperIcon.png" alt="Document Icon" class="w-10 h-10 mb-3">
       </div>
