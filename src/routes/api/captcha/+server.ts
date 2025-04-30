@@ -1,4 +1,3 @@
-import type { RequestHandler } from '@sveltejs/kit';
 import { createCanvas } from 'canvas';
 
 function generateCaptchaText(): string {
@@ -12,28 +11,43 @@ function drawCaptcha(text: string): Buffer {
   const canvas = createCanvas(width, height);
   const ctx = canvas.getContext('2d');
 
-  // Set background color
+  // Set background color to black
   ctx.fillStyle = '#000';
   ctx.fillRect(0, 0, width, height);
 
-  // Draw the text in random positions, without fonts
-  ctx.fillStyle = '#fff';
-  ctx.textBaseline = 'middle';
+  // Starting position for the first letter
+  let xPos = 10;
+  
+  // Calculate total width of text with random font sizes and spacing
+  const fontSizes = Array.from(text).map(() => 24 + Math.random() * 6); // Random font sizes for each letter
+  const totalWidth = fontSizes.reduce((sum, size) => sum + size + Math.random() * 5, 0);
 
-  // Draw random distorted lines and shapes for noise
-  for (let i = 0; i < text.length; i++) {
-    const x = 20 + i * 25 + (Math.random() - 0.5) * 10;
-    const y = 30 + (Math.random() - 0.5) * 10;
-    const angle = (Math.random() - 0.5) * 0.5;
-
-    ctx.save();
-    ctx.translate(x, y);
-    ctx.rotate(angle);
-    ctx.fillText(text[i], 0, 0);
-    ctx.restore();
+  // Adjust spacing if the text is too wide for the canvas
+  if (totalWidth > width) {
+    const scaleFactor = width / totalWidth; // Scale down the text proportionally
+    fontSizes.forEach((_, index) => fontSizes[index] *= scaleFactor); // Apply scaling
   }
 
-  // Add random noise with lines and dots
+  // Draw the text using default font and apply distortions
+  for (let i = 0; i < text.length; i++) {
+    const fontSize = fontSizes[i]; // Use the adjusted font size
+    ctx.font = `${fontSize}px`;
+    const yPos = 40 + (Math.random() - 0.5) * 10; // Slightly randomize the Y position for each letter
+    const angle = (Math.random() - 0.5) * 0.5; // Slight rotation for distortion
+
+    // Save the current context to restore later after applying transformations
+    ctx.save();
+    ctx.translate(xPos, yPos);
+    ctx.rotate(angle);
+    ctx.fillStyle = `hsl(${Math.random() * 360}, 80%, 60%)`; // Random color for each letter
+    ctx.fillText(text[i], 0, 0);
+    ctx.restore();
+
+    // Increment the X position with the width of the character, leaving some space between
+    xPos += fontSize + Math.random() * 5; // Adjusting the spacing between letters
+  }
+
+  // Add random noise (lines and circles) for distortion
   for (let i = 0; i < 30; i++) {
     ctx.strokeStyle = `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.3)`;
     ctx.beginPath();
@@ -42,7 +56,7 @@ function drawCaptcha(text: string): Buffer {
     ctx.stroke();
   }
 
-  // Add random circles
+  // Add random circles to further distort
   for (let i = 0; i < 20; i++) {
     ctx.fillStyle = `rgba(255, 255, 255, ${Math.random() * 0.5})`;
     ctx.beginPath();
