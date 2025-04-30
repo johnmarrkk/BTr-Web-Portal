@@ -105,7 +105,7 @@
               type="text"
               name="captcha"
               placeholder="Enter CAPTCHA"
-              class="w-full uppercase border mt-2 bg-white rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 pr-12"
+              class="w-full border mt-2 bg-white rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 pr-12"
               required
             />
             <button
