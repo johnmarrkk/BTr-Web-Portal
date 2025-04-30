@@ -1,5 +1,8 @@
-import { createCanvas } from 'canvas';
+import { registerFont, createCanvas } from 'canvas';
 import type { RequestHandler } from '@sveltejs/kit';
+
+// Register the custom font (Roboto.ttf)
+registerFont('src/assets/fonts/Roboto.ttf', { family: 'Roboto' });
 
 function generateCaptchaText(): string {
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghkmnopqrstuvwxyz23456789';
@@ -29,10 +32,10 @@ function drawDistortedCaptcha(text: string): Buffer {
     ctx.stroke();
   }
   
-  // Use a system font (safe on Vercel)
+  // Use the custom font (Roboto)
   for (let i = 0; i < text.length; i++) {
     const fontSize = 24 + Math.random() * 6;
-    ctx.font = `${fontSize}px sans-serif`;  // Use sans-serif font
+    ctx.font = `${fontSize}px 'Roboto'`;  // Use custom Roboto font
     const x = 20 + i * 25 + (Math.random() - 0.5) * 10;
     const y = 40 + (Math.random() - 0.5) * 10;
     const angle = (Math.random() - 0.5) * 0.5;
