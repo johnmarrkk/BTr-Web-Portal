@@ -2,17 +2,15 @@
 
 import type { RequestHandler } from '@sveltejs/kit';
 import { registerFont, createCanvas } from 'canvas';
+import path from 'path';
 import { fileURLToPath } from 'url';
-import { dirname, resolve } from 'path';
 
-// Get __dirname in ES module
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// ✅ Register the font from static/fonts
-registerFont(resolve(__dirname, '../../../../static/fonts/Roboto-Regular.ttf'), {
+registerFont(path.resolve(__dirname, '../../lib/assets/fonts/Roboto-Regular.ttf'), {
   family: 'Roboto'
 });
+
 
 function generateCaptchaText(): string {
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghkmnopqrstuvwxyz23456789';
