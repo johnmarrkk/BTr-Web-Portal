@@ -2,7 +2,7 @@ import type { RequestHandler } from '@sveltejs/kit';
 import { createCanvas } from 'canvas';
 
 function generateCaptchaText(): string {
-  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghkmnopqrstuvwxyz23456789';
+  const chars = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ';
   return Array.from({ length: 5 }, () => chars[Math.floor(Math.random() * chars.length)]).join('');
 }
 
@@ -12,20 +12,20 @@ function drawCaptcha(text: string): Buffer {
   const canvas = createCanvas(width, height);
   const ctx = canvas.getContext('2d');
 
-  // Background color
+  // Set background color
   ctx.fillStyle = '#000';
   ctx.fillRect(0, 0, width, height);
 
-  // Text styling and distortion
+  // Draw the text in random positions, without fonts
   ctx.fillStyle = '#fff';
-  ctx.font = '30px sans-serif';  // Use basic sans-serif font
   ctx.textBaseline = 'middle';
 
-  // Draw the captcha text
+  // Draw random distorted lines and shapes for noise
   for (let i = 0; i < text.length; i++) {
     const x = 20 + i * 25 + (Math.random() - 0.5) * 10;
     const y = 30 + (Math.random() - 0.5) * 10;
     const angle = (Math.random() - 0.5) * 0.5;
+
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(angle);
@@ -33,13 +33,21 @@ function drawCaptcha(text: string): Buffer {
     ctx.restore();
   }
 
-  // Add random lines and noise
+  // Add random noise with lines and dots
   for (let i = 0; i < 30; i++) {
     ctx.strokeStyle = `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.3)`;
     ctx.beginPath();
     ctx.moveTo(Math.random() * width, Math.random() * height);
     ctx.lineTo(Math.random() * width, Math.random() * height);
     ctx.stroke();
+  }
+
+  // Add random circles
+  for (let i = 0; i < 20; i++) {
+    ctx.fillStyle = `rgba(255, 255, 255, ${Math.random() * 0.5})`;
+    ctx.beginPath();
+    ctx.arc(Math.random() * width, Math.random() * height, Math.random() * 3, 0, Math.PI * 2);
+    ctx.fill();
   }
 
   return canvas.toBuffer('image/png');
