@@ -6,8 +6,6 @@
     RefreshOutline,
   } from "flowbite-svelte-icons";
 
-  import CaptchaImage from '$lib/components/CaptchaImage.svelte';
-
 
   let show = false;
   let email = "";
@@ -15,7 +13,7 @@
 
   export let form: any;
   let captchaSrc = "/api/captcha?" + Date.now();
-  const refreshCaptcha = () => (captchaSrc = "/api/captcha?" + Date.now());
+  const refreshCaptcha = () => (captchaSrc = "/api/captcha?");
 </script>
 
 <nav class="bg-blue-900 h-16 flex fixed w-full items-center">
@@ -97,7 +95,11 @@
 
         <div>
           <div class="flex items-center gap-2">
-            <CaptchaImage />
+            <img
+              src={captchaSrc}
+              alt="CAPTCHA"
+              class="border rounded h-18 w-full"
+            />
           </div>
           <div class="flex items-center relative">
             <input
