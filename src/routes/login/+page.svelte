@@ -112,7 +112,7 @@
             <button
               type="button"
               on:click={refreshCaptcha}
-              class="text-sm text-blue-600 hover:underline mt-1 bg-gray-200 h-9 w-10 border-r text-center rounded-r-sm p-1 absolute right-0 top-1/2 transform -translate-y-1/2 flex justify-center items-center"
+              class="text-sm text-blue-600 hover:underline mt-1 bg-gray-200 h-9 w-10 border-r text-center rounded-r-sm p-1 absolute right-0 top-1/2 transform -translate-y-1/2 flex justify-center items-center cursor-pointer"
             >
               <RefreshOutline />
             </button>
@@ -133,7 +133,7 @@
 
         <button
           type="submit"
-          class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+          class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 cursor-pointer"
           >Login</button
         >
         <p class="text-sm font-light text-gray-500 dark:text-gray-400">

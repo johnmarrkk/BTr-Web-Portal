@@ -3,6 +3,14 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import { createCanvas } from 'canvas';
 
+import path from 'path';
+import { registerFont } from 'canvas';
+
+registerFont(path.resolve('static/fonts/Roboto-Regular.ttf'), {
+  family: 'Roboto'
+});
+
+
 function generateCaptchaText(): string {
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghkmnopqrstuvwxyz23456789';
   return Array.from({ length: 5 }, () => chars[Math.floor(Math.random() * chars.length)]).join('');
@@ -18,10 +26,10 @@ function drawDistortedCaptcha(text: string): Buffer {
   ctx.fillStyle = '#000';
   ctx.fillRect(0, 0, width, height);
 
-  // Draw distorted text
+  // Draw distorted text using a default system font (sans-serif)
   for (let i = 0; i < text.length; i++) {
     const fontSize = 24 + Math.random() * 6;
-    ctx.font = `${fontSize}px sans-serif`; // Use the default sans-serif font
+    ctx.font = `${fontSize}px Roboto`;
     const x = 20 + i * 25 + (Math.random() - 0.5) * 10; // Random horizontal movement
     const y = 40 + (Math.random() - 0.5) * 10; // Random vertical movement
     const angle = (Math.random() - 0.5) * 0.5; // Random rotation angle
@@ -34,15 +42,15 @@ function drawDistortedCaptcha(text: string): Buffer {
     ctx.restore();
   }
 
-  // Add random lines for distortion (diagonal, vertical, and horizontal)
-  for (let i = 0; i < 5; i++) {
+  // Add random thin lines for distortion (horizontal, vertical, diagonal)
+  for (let i = 0; i < 20; i++) {
     const startX = Math.random() * width;
     const startY = Math.random() * height;
     const endX = Math.random() * width;
     const endY = Math.random() * height;
     
-    ctx.strokeStyle = `rgba(255, 255, 255, ${Math.random()})`; // Random line opacity
-    ctx.lineWidth = 1 + Math.random() * 2; // Random line thickness
+    ctx.strokeStyle = `rgba(255, 255, 255, ${Math.random() * 0.5})`; // Random line opacity for thin lines
+    ctx.lineWidth = 0.5 + Math.random() * 1; // Thin line width
     ctx.beginPath();
     ctx.moveTo(startX, startY);
     ctx.lineTo(endX, endY);
