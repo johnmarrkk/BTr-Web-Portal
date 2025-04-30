@@ -1,7 +1,6 @@
 // src/routes/api/captcha/+server.ts
 
 import type { RequestHandler } from '@sveltejs/kit';
-
 import { registerFont, createCanvas } from 'canvas';
 import path from 'path';
 
@@ -9,7 +8,6 @@ import path from 'path';
 registerFont(path.resolve(process.cwd(), 'static/fonts/Roboto.ttf'), {
   family: 'Roboto',
 });
-
 
 function generateCaptchaText(): string {
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghkmnopqrstuvwxyz23456789';
@@ -38,21 +36,21 @@ function drawDistortedCaptcha(text: string): Buffer {
   }
 
   for (let i = 0; i < text.length; i++) {
-	const fontSize = 24 + Math.random() * 6;
-	ctx.font = `${fontSize}px Roboto`;
-	const x = 20 + i * 25 + (Math.random() - 0.5) * 10;
-	const y = 40 + (Math.random() - 0.5) * 10;
-	const angle = (Math.random() - 0.5) * 0.5;
+    const fontSize = 24 + Math.random() * 6;
+    ctx.font = `${fontSize}px Roboto`;
+    const x = 20 + i * 25 + (Math.random() - 0.5) * 10;
+    const y = 40 + (Math.random() - 0.5) * 10;
+    const angle = (Math.random() - 0.5) * 0.5;
   
-	ctx.save();
-	ctx.translate(x, y);
-	ctx.rotate(angle);
-	ctx.fillStyle = `hsl(${Math.random() * 360}, 80%, 60%)`;
-	ctx.fillText(text[i], 0, 0);
-	ctx.restore();
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(angle);
+    ctx.fillStyle = `hsl(${Math.random() * 360}, 80%, 60%)`;
+    ctx.fillText(text[i], 0, 0);
+    ctx.restore();
   }
   
-
+  // Add random dots for distortion
   for (let i = 0; i < 100; i++) {
     ctx.fillStyle = `rgba(255,255,255,${Math.random()})`;
     ctx.beginPath();
@@ -64,14 +62,19 @@ function drawDistortedCaptcha(text: string): Buffer {
 }
 
 export const GET: RequestHandler = async ({ cookies }) => {
-  const captcha = generateCaptchaText();
-  const image = drawDistortedCaptcha(captcha);
+  try {
+    const captcha = generateCaptchaText();
+    const image = drawDistortedCaptcha(captcha);
 
-  cookies.set('captcha', captcha, { path: '/', maxAge: 300 });
+    cookies.set('captcha', captcha, { path: '/', maxAge: 300 });
 
-  return new Response(image, {
-    headers: {
-      'Content-Type': 'image/png'
-    }
-  });
+    return new Response(image, {
+      headers: {
+        'Content-Type': 'image/png'
+      }
+    });
+  } catch (error) {
+    console.error('Error generating captcha:', error);
+    return new Response('Internal Server Error', { status: 500 });
+  }
 };

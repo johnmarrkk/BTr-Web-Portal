@@ -13,7 +13,7 @@
 
   export let form: any;
   let captchaSrc = "/api/captcha?" + Date.now();
-  const refreshCaptcha = () => (captchaSrc = "/api/captcha?");
+  const refreshCaptcha = () => (captchaSrc = "/api/captcha?" + Date.now());
 </script>
 
 <nav class="bg-blue-900 h-16 flex fixed w-full items-center">
