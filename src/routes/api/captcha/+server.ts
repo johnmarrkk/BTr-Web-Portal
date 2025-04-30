@@ -1,3 +1,4 @@
+import type { RequestHandler } from '@sveltejs/kit';
 import { createCanvas } from 'canvas';
 
 function generateCaptchaText(): string {
@@ -11,41 +12,39 @@ function drawCaptcha(text: string): Buffer {
   const canvas = createCanvas(width, height);
   const ctx = canvas.getContext('2d');
 
-  // Set background color to black
   ctx.fillStyle = '#000';
   ctx.fillRect(0, 0, width, height);
 
-  // Starting position for the first letter
   let xPos = 10;
-  
-  // Calculate total width of text with random font sizes and spacing
-  const fontSizes = Array.from(text).map(() => 24 + Math.random() * 6); // Random font sizes for each letter
+
+  const fontSizes = Array.from(text).map(() => 24 + Math.random() * 6); 
   const totalWidth = fontSizes.reduce((sum, size) => sum + size + Math.random() * 5, 0);
 
-  // Adjust spacing if the text is too wide for the canvas
   if (totalWidth > width) {
-    const scaleFactor = width / totalWidth; // Scale down the text proportionally
-    fontSizes.forEach((_, index) => fontSizes[index] *= scaleFactor); // Apply scaling
+    const scaleFactor = width / totalWidth; 
+    fontSizes.forEach((_, index) => fontSizes[index] *= scaleFactor); 
   }
 
-  // Draw the text using default font and apply distortions
   for (let i = 0; i < text.length; i++) {
-    const fontSize = fontSizes[i]; // Use the adjusted font size
-    ctx.font = `${fontSize}px`;
-    const yPos = 40 + (Math.random() - 0.5) * 10; // Slightly randomize the Y position for each letter
-    const angle = (Math.random() - 0.5) * 0.5; // Slight rotation for distortion
-
-    // Save the current context to restore later after applying transformations
-    ctx.save();
-    ctx.translate(xPos, yPos);
-    ctx.rotate(angle);
-    ctx.fillStyle = `hsl(${Math.random() * 360}, 80%, 60%)`; // Random color for each letter
-    ctx.fillText(text[i], 0, 0);
-    ctx.restore();
-
-    // Increment the X position with the width of the character, leaving some space between
-    xPos += fontSize + Math.random() * 5; // Adjusting the spacing between letters
+	const yPos = 45 + (Math.random() - 0.5) * 10;  // Adjusted yPos to fit larger text
+	const angle = (Math.random() - 0.5) * 0.5;  // Random rotation angle
+  
+	ctx.save();
+	ctx.translate(xPos, yPos);
+	ctx.rotate(angle);
+	
+	// Increased font size to make letters larger
+	ctx.font = '24px sans-serif';  // Set larger font size
+	ctx.fillStyle = `hsl(${Math.random() * 360}, 80%, 60%)`; // Random color for each letter
+	
+	// Draw the letter at the adjusted position
+	ctx.fillText(text[i], 0, 0);
+	ctx.restore();
+  
+	// Adjusted horizontal spacing to prevent overlapping with larger text
+	xPos += 20 + Math.random() * 10;
   }
+  
 
   // Add random noise (lines and circles) for distortion
   for (let i = 0; i < 30; i++) {
