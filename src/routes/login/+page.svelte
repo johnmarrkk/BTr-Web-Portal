@@ -7,11 +7,12 @@
   } from "flowbite-svelte-icons";
 
   let show = false;
+  let email = "";
+  let password = "";
 
   export let form: any;
   let captchaSrc = "/api/captcha?" + Date.now();
   const refreshCaptcha = () => (captchaSrc = "/api/captcha?" + Date.now());
-
 </script>
 
 <nav class="bg-blue-900 h-16 flex fixed w-full items-center">
@@ -55,6 +56,7 @@
             class="block px-2.5 pb-2.5 pt-4 w-full text-sm font-semibold text-black bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:border-blue-600 peer"
             placeholder=""
             required
+            bind:value={email}
           />
           <label
             for="email"
@@ -70,6 +72,7 @@
             class="block px-2.5 pb-2.5 pt-4 w-full text-sm font-semibold text-black bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:border-blue-600 peer"
             required
             placeholder=""
+            bind:value={password}
           />
           <label
             for="password"
@@ -96,7 +99,6 @@
               alt="CAPTCHA"
               class="border rounded h-18 w-full"
             />
-            
           </div>
           <div class="flex items-center relative">
             <input
@@ -114,7 +116,6 @@
               <RefreshOutline />
             </button>
           </div>
-          
 
           {#if form?.error}
             <p class="text-red-600 text-sm">{form.error}</p>
