@@ -6,6 +6,9 @@
     RefreshOutline,
   } from "flowbite-svelte-icons";
 
+  import CaptchaImage from '$lib/components/CaptchaImage.svelte';
+
+
   let show = false;
   let email = "";
   let password = "";
@@ -94,11 +97,7 @@
 
         <div>
           <div class="flex items-center gap-2">
-            <img
-              src={captchaSrc}
-              alt="CAPTCHA"
-              class="border rounded h-18 w-full"
-            />
+            <CaptchaImage />
           </div>
           <div class="flex items-center relative">
             <input
