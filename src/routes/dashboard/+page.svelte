@@ -25,6 +25,7 @@
     import { onMount, onDestroy } from "svelte";
 
     onMount(() => {
+        // @ts-ignore
         interval = setInterval(nextSlide, 5000); // Change every 5 seconds
     });
 
