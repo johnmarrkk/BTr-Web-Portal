@@ -16,47 +16,47 @@
     
     <div class="flex items-start gap-x-4 py-2">
       <span class="font-semibold">Full name:</span>
-      <span>IZYL BUISING CLEMEÑA</span>
+      <input type="text" value="IZYL B. CLEMEÑA" disabled>
     </div>
     
     <div class="flex items-start gap-x-4 py-2">
       <span class="font-semibold">Mobile:</span>
-      <span>09153856038</span>
+      <input type="text" value="09153856039" disabled>
     </div>
     
     <div class="flex items-start gap-x-4 py-2">
       <span class="font-semibold">Email:</span>
-      <span>clemenaizyl@gmail.com</span>
+      <input type="text" value="clemenaizyl@gmail.com" disabled>
     </div>
     
     <div class="flex items-start gap-x-4 py-2">
       <span class="font-semibold">Client Type:</span>
-      <span>LGU</span>
+      <input type="text" value="LGU" disabled>
     </div>
     
     <div class="flex items-start gap-x-4 py-2">
       <span class="font-semibold">Position:</span>
-      <span>Office Head</span>
+      <input type="text" value="Office Head" disabled>
     </div>
     
     <div class="flex items-start gap-x-4 py-2">
       <span class="font-semibold">Agency:</span>
-      <span>Albay 3rd District Engineering Office</span>
+      <input type="text" value="Albay 3rd District Engineering Office" disabled>
     </div>
     
     <div class="flex items-start gap-x-4 py-2">
       <span class="font-semibold">Department:</span>
-      <span>Department of Public Works and Highways (DPWH)</span>
+      <input type="text" value="Department of Public Works and Highways (DPWH)" disabled>
     </div>
     
     <div class="flex items-start gap-x-4 py-2">
       <span class="font-semibold">Office Address:</span>
-      <span>Legazpi Albay</span>
+      <input type="text" value="Legazpi Albay" disabled>
     </div>
     
     <div class="flex items-start gap-x-4 py-2">
       <span class="font-semibold">Date Account Created:</span>
-      <span>December 4, 2024</span>
+      <input type="text" value="December 4, 2024" disabled>
     </div>
     
   </div>
