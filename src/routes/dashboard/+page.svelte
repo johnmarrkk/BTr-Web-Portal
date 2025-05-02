@@ -34,7 +34,6 @@
     });
 </script>
 
-
 <div>
     <div class="w-full h-[250px] grid grid-cols-[3fr_1fr]">
         <div class="">
@@ -83,66 +82,105 @@
             </div>
         </div>
         <div class="w-full grid grid-rows-2 gap-2 ml-2">
-            <img src="/images/BTr-Treasury.jpg" alt="" class="h-30 w-100 rounded-lg">
-            <img src="/images/Data_Privacy.png" alt="" class="h-30 w-100 rounded-lg">
-
-          
+            <img
+                src="/images/BTr-Treasury.jpg"
+                alt=""
+                class="h-30 w-100 rounded-lg"
+            />
+            <img
+                src="/images/Data_Privacy.png"
+                alt=""
+                class="h-30 w-100 rounded-lg"
+            />
         </div>
     </div>
 </div>
 
-
 <div>
-    <h1 class = "mt-5 text-xl font-bold">Hello, Izyl Clemeña!</h1>
-    <p class = "text-blue-500">How can we help you?</p>
-    <p class = "text-center">Click on the Treasury services that you want to avail</p>
+    <h1 class="mt-5 text-xl font-bold">Hello, Izyl Clemeña!</h1>
+    <p class="text-blue-500">How can we help you?</p>
+    <p class="text-center">
+        Click on the Treasury services that you want to avail
+    </p>
 </div>
 
 <div class="grid grid-cols-5 gap-4 mt-5 ml-5">
-  <div class="border rounded-lg justify-between">
-    <div class="flex justify-center p-2">
-        <img src="https://www.gstatic.com/images/branding/product/1x/docs_2020q4_48dp.png" alt="Document Icon" class="w-10 h-10">
-      </div>
-      <a href="/depositedCollections_Page1" class="text-xs font-medium text-center block cursor-pointer">
-        Certification and<br>
-        Confirmation of Deposited<br>
-        National Collections
-      </a>
-      
-  </div>
+    <div class="border rounded-lg justify-between">
+        <div class="flex justify-center p-2">
+            <img
+                src="https://www.gstatic.com/images/branding/product/1x/docs_2020q4_48dp.png"
+                alt="Document Icon"
+                class="w-10 h-10"
+            />
+        </div>
+        <a
+            href="/depositedCollections_Page1"
+            class="text-xs font-medium text-center block cursor-pointer"
+        >
+            Certification and<br />
+            Confirmation of Deposited<br />
+            National Collections
+        </a>
+    </div>
 
-  <div class="border rounded-lg justify-between">
-    <div class="flex justify-center p-2">
-        <img src="/images/chequeIcon.png" alt="Document Icon" class="w-10 h-10 mb-3">
-      </div>
-      <div class="text-sm font-medium text-center">
-        Re-order of MDS Checks
-      </div>
-  </div>
-  <div class="border rounded-lg justify-between">
-    <div class="flex justify-center p-2">
-        <img src="/images/bankIcon.png" alt="Document Icon" class="w-10 h-10 mb-3">
-      </div>
-      <div class="text-sm font-medium text-center">
-        Opening of Bank Account
-      </div>
-  </div>
-  <div class="border rounded-lg justify-between">
-    <div class="flex justify-center p-2">
-        <img src="/images/Report.png" alt="Document Icon" class="w-10 h-10 mb-1.5">
-      </div>
-      <div class="text-sm font-medium text-center">
-        Monthly Report of <br>
-        Collections and Deposits
-      </div>
-  </div>
-  <div class="border rounded-lg justify-between">
-    <div class="flex justify-center p-2">
-        <img src="/images/paperIcon.png" alt="Document Icon" class="w-10 h-10 mb-3">
-      </div>
-      <div class="text-sm font-medium text-center">
-        Financial Literacy
-      </div>
-  </div>
+    <div
+        class="border rounded-lg justify-between hover:scale-110 cursor-pointer hover:shadow-xl transition-all duration-300 hover:bg-blue-700 hover:text-white"
+    >
+        <div class="flex justify-center p-2">
+            <img
+                src="/images/chequeIcon.png"
+                alt="Document Icon"
+                class="w-10 h-10 mb-3"
+            />
+        </div>
+        <div class="text-sm font-medium text-center">
+            Re-order of MDS Checks
+        </div>
+    </div>
 
+    <div
+        class="border rounded-lg justify-between hover:scale-110 cursor-pointer hover:shadow-xl transition-all duration-300 hover:bg-blue-400 hover:text-white"
+    >
+        <div class="flex justify-center p-2">
+            <img
+                src="/images/bankIcon.png"
+                alt="Document Icon"
+                class="w-10 h-10 mb-3"
+            />
+        </div>
+        <div class="text-sm font-medium text-center">
+            Opening of Bank Account
+        </div>
+    </div>
+
+    <div class="border rounded-lg justify-between">
+        <div class="flex justify-center p-2">
+            <img
+                src="/images/Report.png"
+                alt="Document Icon"
+                class="w-10 h-10 mb-1.5"
+            />
+        </div>
+        <div class="text-sm font-medium text-center">
+            Monthly Report of <br />
+            Collections and Deposits
+        </div>
+    </div>
+
+    <a href="https://filiapp.treasury.gov.ph/Fili.html" target="_blank">
+        <div
+            class="border rounded-lg justify-between hover:scale-110 cursor-pointer hover:shadow-xl transition-all duration-300 bg-gray-800 hover:text-white"
+        >
+            <div class="flex justify-center p-2">
+                <img
+                    src="https://filiapp.treasury.gov.ph/static/FiLi%20Jeep.png"
+                    alt="Document Icon"
+                    class="h-20"
+                />
+            </div>
+            <div class="text-sm font-medium text-center text-white">
+                Financial Literacy
+            </div>
+        </div>
+    </a>
 </div>

@@ -16,7 +16,8 @@
     
     <div class="flex items-start gap-x-4 py-2">
       <span class="font-semibold">Full name:</span>
-      <span>IZYL BUISING CLEMEÑA</span>
+     <input type="text" value="IZYL" >
+     
     </div>
     
     <div class="flex items-start gap-x-4 py-2">

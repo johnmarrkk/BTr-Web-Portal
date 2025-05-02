@@ -33,6 +33,7 @@
   function verifyCaptcha() {
     if (!userAnswer.trim()) {
       error = "Please enter the CAPTCHA code.";
+      setTimeout(() => (error = ''), 3000);
       return;
     }
 
@@ -125,15 +126,16 @@
               type="text"
               placeholder="Enter CAPTCHA"
               disabled={isVerified}
-              on:input={(e) => userAnswer = e.target.value.toUpperCase()}
+              required
               class="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 disabled:bg-gray-200"
             />
+            <!-- svelte-ignore a11y_consider_explicit_label -->
             <button
             type="button"
               on:click={fetchCaptcha} 
-              class="px-3 py-2 bg-gray-200 rounded hover:bg-gray-300"
+              class="px-3 py-2 bg-gray-200 rounded hover:bg-gray-300 cursor-pointer"
             >
-              🔄
+            <RefreshOutline/>
             </button>
           </div>
 
