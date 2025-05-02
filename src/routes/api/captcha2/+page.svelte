@@ -7,39 +7,43 @@
 	let isVerified = false;
 	let error = '';
 
+	// Fetch CAPTCHA without page reload
 	async function fetchCaptcha() {
 		const res = await fetch('/api/captcha2');
 		const data = await res.json();
 		svgCaptcha = data.svg;
 		captchaSolution = data.solution;
-		userAnswer = '';
+		userAnswer = ''; // Reset answer field without refreshing the page
 		isVerified = false;
-		error = '';
+		error = ''; // Clear any error messages
 	}
 
+	// Fetch CAPTCHA once on mount
 	onMount(() => {
 		fetchCaptcha();
 	});
 
+	// Verify the user's answer against the CAPTCHA solution
 	function verifyCaptcha() {
-		if (!userAnswer.trim()) {
-			error = 'Please enter the CAPTCHA code.';
-			return;
-		}
-
-		if (userAnswer.toUpperCase() === captchaSolution) {
-			isVerified = true;
-			error = '';
-            // ✅ Redirect after short delay
-			setTimeout(() => {
-				window.location.href = '/dashboard'; // Replace with your actual route
-			}, 1500); // Optional delay for success message
-		} else {
-			isVerified = false;
-			error = 'INVALID CAPTCHA - Please try again.';
-			setTimeout(() => (error = ''), 3000);
-		}
+	if (!userAnswer.trim()) {
+		error = 'Please enter the CAPTCHA code.';
+		return;
 	}
+
+	if (userAnswer === captchaSolution) {
+		isVerified = true;
+		error = '';
+		// Redirect after short delay
+		setTimeout(() => {
+			window.location.href = '/dashboard'; // Replace with your actual route
+		}, 1500); // Optional delay for success message
+	} else {
+		isVerified = false;
+		error = 'INVALID CAPTCHA - Please try again.';
+		setTimeout(() => (error = ''), 3000);
+	}
+}
+
 </script>
 
 <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-md mx-auto mt-10">
@@ -60,7 +64,7 @@
 			class="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 disabled:bg-gray-200"
 		/>
 		<button
-			on:click={fetchCaptcha}
+			on:click={fetchCaptcha} 
 			class="px-3 py-2 bg-gray-200 rounded hover:bg-gray-300"
 			title="Refresh"
 		>

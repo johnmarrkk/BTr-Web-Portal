@@ -73,7 +73,7 @@ function drawCaptchaSvg(text: string): string {
 
     svg += `<rect width="100%" height="100%" fill="transparent" pointer-events="all"/>`;
 
-    svg += '</svg>';
+    
 	return svg;
 }
 
