@@ -6,14 +6,51 @@
     RefreshOutline,
   } from "flowbite-svelte-icons";
 
+  import { onMount } from 'svelte';
+  import { goto } from '$app/navigation';
 
   let show = false;
   let email = "";
   let password = "";
 
-  export let form: any;
-  let captchaSrc = "/api/captcha?" + Date.now();
-  const refreshCaptcha = () => (captchaSrc = "/api/captcha?" + Date.now());
+
+  let userAnswer = "";
+  let captchaSolution = "";
+  let svgCaptcha = "";
+  let isVerified = false;
+  let error = "";
+
+  async function fetchCaptcha() {
+    const res = await fetch("/api/captcha2");
+    const data = await res.json();
+    svgCaptcha = data.svg;
+    captchaSolution = data.solution;
+    userAnswer = "";
+    isVerified = false;
+    error = "";
+  }
+
+  onMount(() => {
+    fetchCaptcha();
+  });
+
+  function verifyCaptcha() {
+    if (!userAnswer.trim()) {
+      error = "Please enter the CAPTCHA code.";
+      return;
+    }
+
+    if (userAnswer.toUpperCase() === captchaSolution) {
+      isVerified = true;
+      error = "";
+
+      setTimeout(() => goto('/dashboard'), 500);
+    } else {
+      isVerified = false;
+      error = "INVALID CAPTCHA - Please try again.";
+      setTimeout(() => (error = ""), 3000);
+    }
+  }
 </script>
 
 <nav class="bg-blue-900 h-16 flex fixed w-full items-center">
@@ -94,32 +131,47 @@
         </div>
 
         <div>
-          <div class="flex items-center gap-2">
-            <img
-              src={captchaSrc}
-              alt="CAPTCHA"
-              class="border rounded h-18 w-full"
-            />
-          </div>
-          <div class="flex items-center relative">
-            <input
-              type="text"
-              name="captcha"
-              placeholder="Enter CAPTCHA"
-              class="w-full border mt-2 bg-white rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 pr-12"
-              required
-            />
-            <button
-              type="button"
-              on:click={refreshCaptcha}
-              class="text-sm text-blue-600 hover:underline mt-1 bg-gray-200 h-9 w-10 border-r text-center rounded-r-sm p-1 absolute right-0 top-1/2 transform -translate-y-1/2 flex justify-center items-center cursor-pointer"
-            >
-              <RefreshOutline />
-            </button>
+          <!-- CAPTCHA SVG -->
+          <div
+            class="border flex items-center justify-center p-1 mb-3 bg-gray-100 border-dashed rounded text-center"
+          >
+            {@html svgCaptcha}
           </div>
 
-          {#if form?.error}
-            <p class="text-red-600 text-sm">{form.error}</p>
+          <!-- Input and Buttons -->
+          <div class="flex gap-2 mb-2">
+            <input
+              bind:value={userAnswer}
+              type="text"
+              placeholder="Enter CAPTCHA"
+              disabled={isVerified}
+              class="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 disabled:bg-gray-200"
+            />
+            <button
+              on:click={fetchCaptcha}
+              class="px-3 py-2 bg-gray-200 rounded hover:bg-gray-300"
+              title="Refresh"
+            >
+              🔄
+            </button>
+          
+          </div>
+
+          <!-- Messages -->
+          {#if error}
+            <div
+              class="p-2 bg-red-100 border border-red-400 text-red-700 rounded text-center font-bold"
+            >
+              {error}
+            </div>
+          {/if}
+
+          {#if isVerified}
+            <div
+              class="p-2 bg-green-100 border border-green-400 text-green-700 rounded text-center font-bold"
+            >
+              ✓ Verification successful!
+            </div>
           {/if}
         </div>
 
@@ -133,7 +185,9 @@
 
         <button
           type="submit"
-          class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 cursor-pointer"
+          on:click={verifyCaptcha}
+          disabled={!userAnswer || isVerified}
+          class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 disabled:bg-gray-300 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 cursor-pointer"
           >Login</button
         >
         <p class="text-sm font-light text-gray-500 dark:text-gray-400">
