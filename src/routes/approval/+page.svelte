@@ -1,7 +1,7 @@
 <script></script>
 
 <nav class="bg-blue-900 h-16 flex fixed w-full items-center">
-    <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
       <img src="images/BTR_logo.png" class="h-11 m-3" alt="BTR Logo" />
     </a>
     <div class="flex flex-col leading-tight">
@@ -36,7 +36,7 @@
             Thank you for your patience and understanding!
         </p>
 
-        <a href="#" class="inline-flex items-center justify-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-32 mt-4">
+        <a href="/" class="inline-flex items-center justify-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-32 mt-4">
             Done
         </a>
     </div>

@@ -16,52 +16,47 @@
     
     <div class="flex items-start gap-x-4 py-2">
       <span class="font-semibold">Full name:</span>
-<<<<<<< HEAD
-     <input type="text" value="IZYL" >
-     
-=======
-      <input type="text" value="IZYL B. CLEMEÑA" disabled>
->>>>>>> c1f51140a5589a745e841f2c205b2166f78d3ef2
+      <span>IZYL BUISING CLEMEÑA</span>
     </div>
     
     <div class="flex items-start gap-x-4 py-2">
       <span class="font-semibold">Mobile:</span>
-      <input type="text" value="09153856039" disabled>
+      <span>09153856038</span>
     </div>
     
     <div class="flex items-start gap-x-4 py-2">
       <span class="font-semibold">Email:</span>
-      <input type="text" value="clemenaizyl@gmail.com" disabled>
+      <span>clemenaizyl@gmail.com</span>
     </div>
     
     <div class="flex items-start gap-x-4 py-2">
       <span class="font-semibold">Client Type:</span>
-      <input type="text" value="LGU" disabled>
+      <span>LGU</span>
     </div>
     
     <div class="flex items-start gap-x-4 py-2">
       <span class="font-semibold">Position:</span>
-      <input type="text" value="Office Head" disabled>
+      <span>Office Head</span>
     </div>
     
     <div class="flex items-start gap-x-4 py-2">
       <span class="font-semibold">Agency:</span>
-      <input type="text" value="Albay 3rd District Engineering Office" disabled>
+      <span>Albay 3rd District Engineering Office</span>
     </div>
     
     <div class="flex items-start gap-x-4 py-2">
       <span class="font-semibold">Department:</span>
-      <input type="text" value="Department of Public Works and Highways (DPWH)" disabled>
+      <span>Department of Public Works and Highways (DPWH)</span>
     </div>
     
     <div class="flex items-start gap-x-4 py-2">
       <span class="font-semibold">Office Address:</span>
-      <input type="text" value="Legazpi Albay" disabled>
+      <span>Legazpi Albay</span>
     </div>
     
     <div class="flex items-start gap-x-4 py-2">
       <span class="font-semibold">Date Account Created:</span>
-      <input type="text" value="December 4, 2024" disabled>
+      <span>December 4, 2024</span>
     </div>
     
   </div>
