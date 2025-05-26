@@ -61,7 +61,7 @@
 <div class="flex h-fit mt-16">
     <!-- Sidebar -->
     <aside
-        class="w-64 h-full bg-gray-200 text-black fixed top-16 pt-5 left-0 z-20 flex flex-col justify-between"
+        class="w-64 h-full bg-gray-200 text-black fixed top-16 left-0 z-20 flex flex-col justify-between"
     >
         <Sidebar class="h-full flex flex-col">
             <SidebarWrapper class="flex-grow">
@@ -79,7 +79,7 @@
                                 Izyl Clemeña
                             </h5>
                             <h1 class="text-sm text-gray-500">
-                                Miss Universe 2028
+                                Princess
                             </h1>
                         </div>
                     </div>
@@ -125,7 +125,9 @@
                     <div class="relative">
                         <button
                             class={"flex items-center w-full p-2 rounded-lg transition duration-200 " +
-                                ($currentPath.startsWith("/dashboard/transactions")
+                                ($currentPath.startsWith(
+                                    "/dashboard/transactions",
+                                )
                                     ? " text-black"
                                     : "text-black hover:bg-blue-200")}
                             on:click={() => (isOpen = !isOpen)}
@@ -147,39 +149,38 @@
 
                         {#if isOpen}
                             <div class="ml-9 mt-2 space-y-1">
-                                
                                 <SidebarItem
-                                href="/dashboard/transactions/depositedcollections"
-                                label="Deposited Collections"
-                                class={$currentPath ===
-                                "/dashboard/transactions/depositedcollections"
-                                    ? "bg-blue-500 text-white hover:bg-blue-500"
-                                    : "!text-black hover:bg-blue-200"}
-                            />
-                            <SidebarItem
-                            href="/dashboard/transactions/mdschecks"
-                            label="MDS Checks"
-                            class={$currentPath ===
-                            "/dashboard/transactions/mdschecks"
-                                ? "bg-blue-500 text-white hover:bg-blue-500"
-                                : "!text-black hover:bg-blue-200"}
-                        />
-                        <SidebarItem
-                        href="/dashboard/transactions/bankaccount"
-                        label="Bank Account"
-                        class={$currentPath ===
-                        "/dashboard/transactions/bankaccount"
-                            ? "bg-blue-500 text-white hover:bg-blue-500"
-                            : "!text-black hover:bg-blue-200"}
-                    />
-                    <SidebarItem
-                    href="/dashboard/transactions/monthlyreports"
-                    label="Monthly Reports"
-                    class={$currentPath ===
-                    "/dashboard/transactions/monthlyreports"
-                        ? "bg-blue-500 text-white hover:bg-blue-500"
-                        : "!text-black hover:bg-blue-200"}
-                />
+                                    href="/dashboard/transactions/depositedcollections"
+                                    label="Deposited Collections"
+                                    class={$currentPath ===
+                                    "/dashboard/transactions/depositedcollections"
+                                        ? "bg-blue-500 text-white hover:bg-blue-500"
+                                        : "!text-black hover:bg-blue-200"}
+                                />
+                                <SidebarItem
+                                    href="/dashboard/transactions/mdschecks"
+                                    label="MDS Checks"
+                                    class={$currentPath ===
+                                    "/dashboard/transactions/mdschecks"
+                                        ? "bg-blue-500 text-white hover:bg-blue-500"
+                                        : "!text-black hover:bg-blue-200"}
+                                />
+                                <SidebarItem
+                                    href="/dashboard/transactions/bankaccount"
+                                    label="Bank Account"
+                                    class={$currentPath ===
+                                    "/dashboard/transactions/bankaccount"
+                                        ? "bg-blue-500 text-white hover:bg-blue-500"
+                                        : "!text-black hover:bg-blue-200"}
+                                />
+                                <SidebarItem
+                                    href="/dashboard/transactions/monthlyreports"
+                                    label="Monthly Reports"
+                                    class={$currentPath ===
+                                    "/dashboard/transactions/monthlyreports"
+                                        ? "bg-blue-500 text-white hover:bg-blue-500"
+                                        : "!text-black hover:bg-blue-200"}
+                                />
                             </div>
                         {/if}
                     </div>
@@ -208,3 +209,5 @@
         <slot />
     </main>
 </div>
+
+
