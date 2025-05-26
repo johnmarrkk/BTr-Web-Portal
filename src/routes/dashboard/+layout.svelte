@@ -78,9 +78,7 @@
                             <h5 class="text-m font-bold text-black">
                                 Izyl Clemeña
                             </h5>
-                            <h1 class="text-sm text-gray-500">
-                                Princess
-                            </h1>
+                            <h1 class="text-sm text-gray-500">Princess</h1>
                         </div>
                     </div>
                 </SidebarGroup>
@@ -187,6 +185,7 @@
 
                     <SidebarItem
                         label="Logout"
+                        href="/login"
                         class={$currentPath === "/"
                             ? "bg-blue-500 text-white hover:bg-blue-500"
                             : "!text-black hover:bg-blue-200"}
@@ -209,5 +208,3 @@
         <slot />
     </main>
 </div>
-
-
